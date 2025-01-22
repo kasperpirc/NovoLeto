@@ -15,6 +15,7 @@
 	<a href="/prva">prva, </a>
 	<a href="/druga">druga,</a>
 	<a href="/tretja">tretja</a>
+	<a href="/yearbook">yearbook</a>
 </nav>
 
 <div class="p-5 h-full">
