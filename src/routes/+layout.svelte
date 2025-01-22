@@ -12,9 +12,9 @@
 </script>
 
 <nav class="w-full h-24 bg-sky-300 flex items-center justify-center gap-5">
-	<div>Prva</div>
-	<div>Druga</div>
-	<div>Tretja</div>
+	<a href="/prva">prva, </a>
+	<a href="/druga">druga,</a>
+	<a href="/tretja">tretja</a>
 </nav>
 
 <div class="p-5 h-full">

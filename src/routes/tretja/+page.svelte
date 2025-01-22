@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Card from '../druga/Card.svelte';
+
 	/**
 	 * Ustvarili bomo preprosto aplikacijo za seznam nakupov, kjer lahko dodajamo izdelke in njihove cene.
 	 * Aplikacija bo samodejno izračunala skupno vsoto in prikazala število izdelkov.
@@ -22,16 +24,26 @@
 
 	// Priprava spremenljivk
 	let items: Item[] = [{ name: 'Banana', price: 10 }]; // seznam vseh izdelkov
-	let newItemName = ''; // ime novega izdelka
+	let newItemName = '';
 	let newItemPrice = 0; // cena novega izdelka
 
 	// Ustvarimo funkcijo, ki bo dodajala nove izdelke v seznam:
 	function addItem() {
+		console.log(items);
+		if (newItemPrice != 0 && newItemName != null && newItemName != '') {
+			items.push({ name: newItemName, price: newItemPrice });
+			items = items;
+			console.log(items);
+		}
 		// Pazi: Izdelek dodaj samo, če ima ime in neničelno ceno!
 		// Potem ko dodamo izdelek, ponastavi vrednosti za novi izdelek
 	}
 
 	let total = 0; // skupna cena vseh izdelkov
+
+	$: {
+		for(i = 0, i < total.lenght)
+	}
 </script>
 
 {#each items as item}
@@ -42,7 +54,20 @@
 {/each}
 
 <div>
-	<!-- TUKAJ DODAJ OBRAZEC ZA DODAJANJE NOVEGA IZDELKA -->
+	<input
+		type="text"
+		class="border-spacing-x-10 border-opacity-20 border border-black"
+		bind:value={newItemName}
+	/>
+</div>
+
+<div>
+	<input
+		bind:value={newItemPrice}
+		type="number"
+		class="border-spacing-x-10 border-opacity-20 border border-black"
+	/>
+	<button on:click={addItem}>DODAJ</button>
 </div>
 
 <div class="flex justify-between text-lg font-semibold border-t-2 mt-12 pt-4">
