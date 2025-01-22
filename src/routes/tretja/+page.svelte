@@ -40,10 +40,6 @@
 	}
 
 	let total = 0; // skupna cena vseh izdelkov
-
-	$: {
-		for(i = 0, i < total.lenght)
-	}
 </script>
 
 {#each items as item}
